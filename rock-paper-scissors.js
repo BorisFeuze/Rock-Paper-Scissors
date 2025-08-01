@@ -7,12 +7,21 @@ if (args.length > 1) {
   process.exit(1);
 }
 
+const angabeKey = ["rock", "scissors", "paper"];
+
+if (!angabeKey.some((word) => word === angabe)) {
+  console.error("Please provide only a word among Rock, Scissors, Paper");
+  // return;
+  process.exit(2);
+}
+/*
+
 if (angabe !== "rock" && angabe !== "scissors" && angabe !== "paper") {
   console.error("Please provide only a word among Rock, Scissors, Paper");
   // return;
   process.exit(2);
 }
-
+*/
 // const angabe = args[0];
 
 function computerMove() {
