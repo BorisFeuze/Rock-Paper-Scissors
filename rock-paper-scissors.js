@@ -88,5 +88,3 @@ function playGame(angabe) {
 playGame();
 
 // return;
-
-process.exit(0);
