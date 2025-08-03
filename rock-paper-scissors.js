@@ -15,15 +15,12 @@ if (!angabeKey.some((word) => word === angabe)) {
   process.exit(2);
 }
 /*
-
 if (angabe !== "rock" && angabe !== "scissors" && angabe !== "paper") {
   console.error("Please provide only a word among Rock, Scissors, Paper");
   // return;
   process.exit(2);
 }
 */
-// const angabe = args[0];
-
 function computerMove() {
   let randomNumb = Math.random();
   let computerMove;
@@ -42,7 +39,6 @@ function computerMove() {
 }
 
 let result;
-// console.log(args[0]);
 
 function playGame(angabe) {
   angabe = args[0].toLowerCase().trim();
@@ -92,4 +88,3 @@ function playGame(angabe) {
 playGame();
 
 // return;
-process.exit(0);
