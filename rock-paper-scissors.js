@@ -10,7 +10,7 @@ if (args.length > 1) {
 const angabeKey = ["rock", "scissors", "paper"];
 
 if (!angabeKey.some((word) => word === angabe)) {
-  console.error("Please provide only a word among Rock, Scissors, Paper");
+  console.error("Please provide only a word among rock, scissors, paper");
   // return;
   process.exit(2);
 }
@@ -29,13 +29,13 @@ function computerMove() {
   let computerMove;
 
   if (randomNumb < 1 / 3) {
-    computerMove = "Rock";
+    computerMove = "rock";
     return computerMove;
   } else if (randomNumb >= 1 / 3 && randomNumb < 2 / 3) {
-    computerMove = "Scissors";
+    computerMove = "scissors";
     return computerMove;
   } else if (randomNumb >= 2 / 3 && randomNumb < 1) {
-    computerMove = "Paper";
+    computerMove = "paper";
     return computerMove;
   }
   return computerMove;
@@ -50,45 +50,46 @@ function playGame(angabe) {
   let move = computerMove();
   // console.log(move);
 
-  if (move === "Rock" && angabe === "rock") {
-    result = "Tie";
-    console.log(`You chose Rock. Computer chose Rock. Draw`);
-    return result;
-  } else if (move === "Paper" && angabe === "rock") {
+  if (move === "rock" && angabe === "rock") {
+    result = "Draw";
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "paper" && angabe === "rock") {
     result = "You lose!";
-    console.log(`You chose Rock. Computer chose Paper. You lose!`);
-    return result;
-  } else if (move === "Scissors" && angabe === "rock") {
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "scissors" && angabe === "rock") {
     result = "You win!";
-    console.log(`You chose Rock. Computer chose Scissors. You win!`);
-    return result;
-  } else if (move === "Scissors" && angabe === "scissors") {
-    result = "Tie";
-    console.log(`You chose Scissors. Computer chose Scissors. Draw`);
-    return result;
-  } else if (move === "Paper" && angabe === "scissors") {
-    result = "Tie";
-    console.log(`You chose Scissors. Computer chose Paper. You win!`);
-    return result;
-  } else if (move === "Rock" && angabe === "scissors") {
-    result = "Tie";
-    console.log(`You chose Scissors. Computer chose Rock. You lose!`);
-    return result;
-  } else if (move === "Scissors" && angabe === "paper") {
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "scissors" && angabe === "scissors") {
+    result = "Draw";
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "paper" && angabe === "scissors") {
+    result = "You win!";
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "rock" && angabe === "scissors") {
     result = "You lose!";
-    console.log(`You chose paper. Computer chose Scissors. You lose!`);
-    return result;
-  } else if (move === "Paper" && angabe === "paper") {
-    result = "Tie";
-    console.log(`You chose Paper. Computer chose Paper. Draw`);
-    return result;
-  } else if (move === "Rock" && angabe === "paper") {
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "scissors" && angabe === "paper") {
+    result = "You lose!";
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "paper" && angabe === "paper") {
+    result = "Draw";
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
+  } else if (move === "rock" && angabe === "paper") {
     result = "You win!";
-    console.log(`You chose Paper. Computer chose Rock. You win!`);
-    return result;
+    console.log(`You chose ${angabe}. Computer chose ${move}. ${result}`);
+    return;
   }
 }
 
 playGame();
 
-// console.log(result);
+// return;
+process.exit(0);
